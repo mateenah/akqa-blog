@@ -1,5 +1,6 @@
 import Layout from '../components/myLayout.js'
 import Link from 'next/link'
+import { createClient } from '../common/contentful';
 
 
 function getPosts(){
@@ -20,13 +21,24 @@ const PostLink = ({ post }) => (
 const Index = () => (
   <Layout>
     <h1>My Blog</h1>
+    <p>{someEntryAsProp.fields.text}</p>
     <ul>
     { getPosts().map((post) => (
        <PostLink key={post.id} post={post}/>
     ))}
     </ul>
   </Layout>
-  )
+  );
+
+  Index.getInitialProps = async () => {
+    const client = createClient();
+  
+    const entries = await client.getEntries({
+      // some query
+    });
+    
+    return { someEntryAsProp: entries.items[0] };
+  };
   
   export default Index  
 

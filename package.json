@@ -7,16 +7,22 @@
     "dev": "node server.js && next",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "export": "next export"
-    
+    "export": "next export",
+    "postinstall": "npm run getcontent",
+    "getcontent": "babel-node helpers/getcontent.js install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "contentful": "^7.3.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "next": "^8.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
