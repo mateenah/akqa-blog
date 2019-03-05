@@ -106,7 +106,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/mateenah.mateenah/Documents/Trainings/nextJs/hello-next/components/header.js";
 
 
 var linkStyle = {
@@ -115,84 +114,29 @@ var linkStyle = {
 
 var Header = function Header() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: "navbar navbar-expand navbar-dark bg-primary mb-4",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
+    className: "navbar navbar-expand navbar-dark bg-primary mb-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
+    className: "container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "navbar-brand",
-    href: "#",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
+    href: "#"
   }, "Next.Js"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "collapse navbar-collapse",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
+    className: "collapse navbar-collapse"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "navbar-nav ml-auto",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
+    className: "navbar-nav ml-auto"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
+    className: "nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
+    href: "/"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     style: linkStyle,
-    className: "nav-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
+    className: "nav-link"
   }, "Home"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
+    className: "nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
+    href: "/about"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "nav-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
+    className: "nav-link"
   }, "About")))))));
 };
 
@@ -214,7 +158,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./components/header.js");
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-server/head */ "next-server/head");
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_server_head__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/mateenah.mateenah/Documents/Trainings/nextJs/hello-next/components/myLayout.js";
 
 
 
@@ -225,45 +168,11 @@ var layoutStyle = {
 };
 
 var Layout = function Layout(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_server_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, "NextJs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_server_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "NextJs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
     rel: "stylesheet",
-    href: "https://bootswatch.com/4/lux/bootstrap.min.css",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
+    href: "https://bootswatch.com/4/lux/bootstrap.min.css"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
   }, props.children));
 };
 

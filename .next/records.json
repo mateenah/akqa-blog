@@ -11,22 +11,12 @@
     "byName": {
       "commons": 0,
       "static/runtime/webpack.js": 1,
-      "static/4zj7gYHICjNM~v0SSRhC0/pages/_app.js": 2,
-      "static/4zj7gYHICjNM~v0SSRhC0/pages/_error.js": 3,
-      "static/4zj7gYHICjNM~v0SSRhC0/pages/about.js": 4,
-      "static/4zj7gYHICjNM~v0SSRhC0/pages/index.js": 5,
-      "static/4zj7gYHICjNM~v0SSRhC0/pages/post.js": 6,
-      "static/runtime/main.js": 7,
-      "static/UnTPRioZqhCDopiqKzUNd/pages/_app.js": 8,
-      "static/UnTPRioZqhCDopiqKzUNd/pages/_error.js": 9,
-      "static/UnTPRioZqhCDopiqKzUNd/pages/about.js": 10,
-      "static/UnTPRioZqhCDopiqKzUNd/pages/index.js": 11,
-      "static/UnTPRioZqhCDopiqKzUNd/pages/post.js": 12,
-      "static/6P5QsTHK8h4Mhd0GGlmEP/pages/_app.js": 2,
-      "static/6P5QsTHK8h4Mhd0GGlmEP/pages/_error.js": 3,
-      "static/6P5QsTHK8h4Mhd0GGlmEP/pages/about.js": 4,
-      "static/6P5QsTHK8h4Mhd0GGlmEP/pages/index.js": 5,
-      "static/6P5QsTHK8h4Mhd0GGlmEP/pages/post.js": 6
+      "static/58qYi1odSZ3hsdQ~6ZA7E/pages/_app.js": 2,
+      "static/58qYi1odSZ3hsdQ~6ZA7E/pages/_error.js": 3,
+      "static/58qYi1odSZ3hsdQ~6ZA7E/pages/about.js": 4,
+      "static/58qYi1odSZ3hsdQ~6ZA7E/pages/index.js": 5,
+      "static/58qYi1odSZ3hsdQ~6ZA7E/pages/post.js": 6,
+      "static/runtime/main.js": 7
     },
     "bySource": {},
     "usedIds": [
