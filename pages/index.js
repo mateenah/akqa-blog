@@ -1,6 +1,7 @@
 import Layout from '../components/myLayout.js'
 import Link from 'next/link'
 import createClient from '../helpers/getcontent';
+import { type } from 'os';
 
 
 function getPosts(){
@@ -30,15 +31,21 @@ const Index = () => (
   </Layout>
   );
 
-  // Index.getInitialProps = async () => {
-  //   const client = createClient();
+  Index.getInitialProps = async () => {
+    console.log('> Starting import',);
+    // const client = createClient();
   
-  //   const entries = await client.getEntries({
-  //     // some query
-  //   });
+    // const entries = await client.getEntries({
+    //   // some query
+    //   content_type:type,
+    //   include:1
+    // });
+    // console.log(entries)
+    // console.log('> Content gotten and written for',)
     
-  //   return { someEntryAsProp: entries.items[0] };
-  // };
+    // return { someEntryAsProp: entries.items[0] };
+    return {};
+  };
   
   export default Index  
 
