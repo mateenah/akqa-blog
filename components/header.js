@@ -8,7 +8,7 @@ const Header = () => (
    
     <nav className="navbar navbar-expand navbar-dark bg-primary mb-4">
     <div className="container">
-      <a className="navbar-brand" href="#">Next.Js</a>
+      <a className="navbar-brand" href="#">Stena Recycling</a>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
