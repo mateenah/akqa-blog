@@ -11,7 +11,7 @@ const Layout = (props) => (
     <div>
         <Head>
             <title>NextJs</title>
-            <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css"/>
+            <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
         </Head>
     
         <Header /> 
