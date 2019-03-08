@@ -20,7 +20,9 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-
+  // const MediaItem = ({item}) => {
+  //   item.isVideo ? <video /> : <img />
+  // }
 
   const ContentfulCard = ({ data }) => (
      <div class="col-4 mb-3">
@@ -34,7 +36,8 @@ const PostLink = ({ post }) => (
               </div>
               
               <div class="card-body">
-                  <a class="card-link" href="{data.fields.media.fields.file.url}">{data.fields.media.fields.file.url}</a> 
+              {/* <MediaItem item={data.fields.media.fields.file}/> */}
+                  <a class="card-link" href={data.fields.media.fields.file.url}>{data.fields.media.fields.file.url}</a> 
               </div>  
               {/* <img src="" alt="Card image"/> */}
               
@@ -77,13 +80,13 @@ const PostLink = ({ post }) => (
               <Layout>
               <h1>My Blog</h1>
               <div class="row">
-              <div class="col-12 mb-3" style= {divStyle}>
+              {/* <div class="col-12 mb-3" style= {divStyle}> */}
              
                   {this.props.someEntryAsProp.map(data =>   
                   <ContentfulCard key={data.id} data={data} />)}  
                  
               </div>
-            </div>
+            {/* </div> */}
             </Layout>
             );
           }

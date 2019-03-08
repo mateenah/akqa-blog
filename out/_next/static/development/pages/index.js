@@ -19311,7 +19311,10 @@ var PostLink = function PostLink(_ref) {
     as: "/p/".concat(post.id),
     href: "/post?title=".concat(post.title)
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", null, post.title)));
-};
+}; // const MediaItem = ({item}) => {
+//   item.isVideo ? <video /> : <img />
+// }
+
 
 var ContentfulCard = function ContentfulCard(_ref2) {
   var data = _ref2.data;
@@ -19334,7 +19337,7 @@ var ContentfulCard = function ContentfulCard(_ref2) {
     class: "card-body"
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
     class: "card-link",
-    href: "{data.fields.media.fields.file.url}"
+    href: data.fields.media.fields.file.url
   }, data.fields.media.fields.file.url)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
     class: "card-body"
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", {
@@ -19365,15 +19368,12 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_myLayout_js__WEBPACK_IMPORTED_MODULE_7__["default"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "My Blog"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
         class: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        class: "col-12 mb-3",
-        style: divStyle
       }, this.props.someEntryAsProp.map(function (data) {
         return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(ContentfulCard, {
           key: data.id,
           data: data
         });
-      }))));
+      })));
     }
   }], [{
     key: "getInitialProps",
