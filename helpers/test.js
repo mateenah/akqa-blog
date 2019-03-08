@@ -74,4 +74,25 @@ export default test
 
 
 
-  
+renderTrails = () => {
+    console.log("TRAILS", this.props.trails.trails)
+    if(this.props.trails.trails){
+      const trail= this.props.trails.trails.map(t => {
+        return(
+            <div className="card" style={{width: 30 + 'rem' }}>
+              <img className="card-img-top" src={t.imgSqSmall ? ( t.imgSqSmall) : ("http://appalachiantrail.org/images/default-source/default-album/trailfocus.jpg?sfvrsn=2")} />
+                <div className="card-body">
+                  <h1 className="card-title">{t.name}</h1>
+                    <h2 className="card-text">{t.location} </h2>
+                      <h4 className="card-text">{t.summary} </h4>
+              </div>
+          </div>
+        )
+      })
+      return(
+        <div className = "row">
+          {trail}
+        </div>
+      )
+    }
+  }

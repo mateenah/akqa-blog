@@ -19311,34 +19311,24 @@ var PostLink = function PostLink(_ref) {
     as: "/p/".concat(post.id),
     href: "/post?title=".concat(post.title)
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", null, post.title)));
-}; // const Index = () => (
-//   <Layout>
-//     <h1>My Blog</h1>
-//     <p>{someEntryAsProp.text}</p>
-//     <ul>
-//     { getPosts().map((post) => (
-//        <PostLink key={post.id} post={post}/>
-//     ))}
-//     </ul>
-//   </Layout>
-//   );
-// Index.getInitialProps = async () => {
-//   console.log('> Starting import',);
-//  const client = createClient();
-//    const entries = await client.getEntries({
-//     // some query
-//     content_type:type,
-//     include:1
-//    });
-//    const someEntryAsProp = entries.items[0].fields;
-//   // console.log(entries)
-//   console.log("entries.items[0]-----",entries.items[0])
-//   console.log("someEntryAsProp----",someEntryAsProp)
-//   // console.log('> Content gotten and written for',)
-//   return { someEntryAsProp };
-//   //return {};
-// };
+};
 
+var ContentfulCard = function ContentfulCard(_ref2) {
+  var data = _ref2.data;
+  return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+    class: "card text-white bg-success mb-3"
+  }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+    class: "card-header"
+  }, data.fields.title), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+    class: "card-body"
+  }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h4", {
+    class: "card-title",
+    key: "{t.fields.slug}"
+  }, data.fields.slug), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", {
+    class: "card-text",
+    key: "{t.fields.content}"
+  }, data.fields.content)));
+};
 
 var _default =
 /*#__PURE__*/
@@ -19354,31 +19344,16 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(_default, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_myLayout_js__WEBPACK_IMPORTED_MODULE_7__["default"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "My Blog"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", null, this.props.someEntryAsProp[1].fields.title), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("ul", null, getPosts().map(function (post) {
-        return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(PostLink, {
-          key: post.id,
-          post: post
-        });
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_myLayout_js__WEBPACK_IMPORTED_MODULE_7__["default"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "My Blog"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
         class: "row"
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
         class: "col-12 mb-3"
-      }, this.props.someEntryAsProp && this.props.someEntryAsProp.length > 0 ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        class: "card text-white bg-success mb-3"
-      }, this.props.someEntryAsProp.map(function (agency) {
-        return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-          class: "card-header",
-          key: "{agency.fields.title}"
-        }, agency.fields.title);
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        class: "card-header"
-      }, this.props.someEntryAsProp[0].fields.title), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        class: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h4", {
-        class: "card-title"
-      }, this.props.someEntryAsProp[0].fields.slug), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", {
-        class: "card-text"
-      }, this.props.someEntryAsProp[0].fields.content))) : react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("strong", null, "Have nothing!!")))));
+      }, this.props.someEntryAsProp.map(function (data) {
+        return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(ContentfulCard, {
+          key: data.id,
+          data: data
+        });
+      }))));
     }
   }], [{
     key: "getInitialProps",
