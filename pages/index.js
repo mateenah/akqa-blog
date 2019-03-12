@@ -24,39 +24,63 @@ const PostLink = ({ post }) => (
   //   item.isVideo ? <video /> : <img />
   // }
 
+const CheckMediaItem = ({data1}) => {
+
+  if(dataCheck.fields.media) { /* do stuff */ 
+        <div className="card-body">
+        {/* <MediaItem item={data.fields.media.fields.file}/>  */}
+            <img src={dataCheck.fields.media && dataCheck.fields.media.fields.file.url} className="card-link" style= {divStyle}/>
+        </div> 
+      }else{
+         <div className="card-body">
+                <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
+                {/* <a className="card-link" href={data.fields.mediaLink}>{data.fields.mediaLink}</a>  */}
+                <div width="200" height="345" dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
+                </div>
+              </div>
+      }
+
+
+  }
+
+
   const ContentfulCard = ({ data }) => (
-     <div class="col-4 mb-3">
-      <div class="card text-white bg-primary mb-3">
+     <div className="col-4 mb-3">
+      <div className="card text-white bg-primary mb-3">
 
-              <div class="card-title text-muted"><h3 key="{data.fields.title}">{data.fields.title}</h3></div>
+              <div className="card-title text-muted"><h3 key="{data.fields.title}">{data.fields.title}</h3></div>
 
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <h4 class="card-subtitle text-muted" key="{data.fields.slug}">{data.fields.slug}</h4>
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <h4 className="card-subtitle text-muted" key="{data.fields.slug}">{data.fields.slug}</h4>
               </div>
               
-              <div class="card-body">
-              {/* <MediaItem item={data.fields.media.fields.file}/> */}
-                  <a class="card-link" href={data.fields.media.fields.file.url}>{data.fields.media.fields.file.url}</a> 
-              </div>  
-              {/* <img src="" alt="Card image"/> */}
-              
-              <div class="card-body">
-                <p class="card-text" key="{data.fields.content}">{data.fields.content}</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
+                   {(data.fields.media) ? 
+                    ( <div className="card-body">
+                         <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
+                          <img src={data.fields.media && data.fields.media.fields.file.url} key="{data.fields.media}" className="card-link" style= {divStyle}/>
+                      </div> ):
+                  (
+                      <div className="card-body">
+                              <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
+                              <div width="200" height="345"key="{data.fields.embedLink}"  dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
+                              </div>
+                            </div>
+                  )} 
+               
 
               
+
+         </div>     
       </div>
-    </div>
+
+      
  )
       
         
   
-
-  
  export default class extends React.Component {
+   
           static async getInitialProps() {
                   const client = createClient();
                   const entries = await client.getEntries({
@@ -66,11 +90,11 @@ const PostLink = ({ post }) => (
                   const someEntryAsProp = entries.items;
                   for(let i = 0; i<someEntryAsProp.length; i++) {
                     const entries111 = entries.items[i];
-                    console.log("entries111", entries111.fields)
+                    console.log("entries111", entries111.fields.media)
                 }
                 
                   // console.log("someEntryAsProp",someEntryAsProp)
-                  //console.log("entries111",entries111.fields.media.fields.file)
+                //  console.log("entries111",entries111.fields.mediaLink.fields.file)
                   console.log('> Content gotten and written for')
                   return { someEntryAsProp };
           }
@@ -79,14 +103,12 @@ const PostLink = ({ post }) => (
             return (
               <Layout>
               <h1>My Blog</h1>
-              <div class="row">
-              {/* <div class="col-12 mb-3" style= {divStyle}> */}
-             
+              <div className="row">
                   {this.props.someEntryAsProp.map(data =>   
-                  <ContentfulCard key={data.id} data={data} />)}  
-                 
+                  <ContentfulCard key={data.id} data={data} />)}        
               </div>
-            {/* </div> */}
+
+             
             </Layout>
             );
           }
@@ -95,7 +117,11 @@ const PostLink = ({ post }) => (
 
     
         const divStyle = {
-          display:'inline-flex'
+          width: '100%'
+        };
+
+        const crouselStyle = {
+          width: '100%'
         };
 
   

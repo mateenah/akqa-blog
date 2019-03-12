@@ -170,7 +170,14 @@ var layoutStyle = {
 var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_server_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "NextJs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
     rel: "stylesheet",
+    href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    rel: "stylesheet",
     href: "https://bootswatch.com/4/darkly/bootstrap.min.css"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+    src: "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+    src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
   }, props.children));
@@ -1545,40 +1552,74 @@ var PostLink = function PostLink(_ref) {
 // }
 
 
-var ContentfulCard = function ContentfulCard(_ref2) {
-  var data = _ref2.data;
+var CheckMediaItem = function CheckMediaItem(_ref2) {
+  var data1 = _ref2.data1;
+
+  if (dataCheck.fields.media) {
+    /* do stuff */
+    react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      className: "card-body"
+    }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("img", {
+      src: dataCheck.fields.media && dataCheck.fields.media.fields.file.url,
+      className: "card-link",
+      style: divStyle
+    }));
+  } else {
+    react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      className: "card-body"
+    }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", {
+      className: "card-text",
+      key: "{data.fields.content}"
+    }, data.fields.content), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      width: "200",
+      height: "345",
+      dangerouslySetInnerHTML: {
+        __html: data.fields.embedLink
+      }
+    }));
+  }
+};
+
+var ContentfulCard = function ContentfulCard(_ref3) {
+  var data = _ref3.data;
   return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-    class: "col-4 mb-3"
+    className: "col-4 mb-3"
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-    class: "card text-white bg-primary mb-3"
+    className: "card text-white bg-primary mb-3"
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-    class: "card-title text-muted"
+    className: "card-title text-muted"
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h3", {
     key: "{data.fields.title}"
   }, data.fields.title)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-    class: "card-body"
+    className: "card-body"
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h5", {
-    class: "card-title"
+    className: "card-title"
   }, "Special title treatment"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h4", {
-    class: "card-subtitle text-muted",
+    className: "card-subtitle text-muted",
     key: "{data.fields.slug}"
-  }, data.fields.slug)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-    class: "card-body"
-  }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
-    class: "card-link",
-    href: data.fields.media.fields.file.url
-  }, data.fields.media.fields.file.url)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-    class: "card-body"
+  }, data.fields.slug)), data.fields.media ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+    className: "card-body"
   }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", {
-    class: "card-text",
+    className: "card-text",
     key: "{data.fields.content}"
-  }, data.fields.content), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
-    href: "#",
-    class: "card-link"
-  }, "Card link"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
-    href: "#",
-    class: "card-link"
-  }, "Another link"))));
+  }, data.fields.content), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("img", {
+    src: data.fields.media && data.fields.media.fields.file.url,
+    key: "{data.fields.media}",
+    className: "card-link",
+    style: divStyle
+  })) : react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+    className: "card-body"
+  }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("p", {
+    className: "card-text",
+    key: "{data.fields.content}"
+  }, data.fields.content), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+    width: "200",
+    height: "345",
+    key: "{data.fields.embedLink}",
+    dangerouslySetInnerHTML: {
+      __html: data.fields.embedLink
+    }
+  }))));
 };
 
 var _default =
@@ -1596,7 +1637,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_myLayout_js__WEBPACK_IMPORTED_MODULE_7__["default"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("h1", null, "My Blog"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        class: "row"
+        className: "row"
       }, this.props.someEntryAsProp.map(function (data) {
         return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(ContentfulCard, {
           key: data.id,
@@ -1628,9 +1669,9 @@ function (_React$Component) {
 
                 for (i = 0; i < someEntryAsProp.length; i++) {
                   entries111 = entries.items[i];
-                  console.log("entries111", entries111.fields);
+                  console.log("entries111", entries111.fields.media);
                 } // console.log("someEntryAsProp",someEntryAsProp)
-                //console.log("entries111",entries111.fields.media.fields.file)
+                //  console.log("entries111",entries111.fields.mediaLink.fields.file)
 
 
                 console.log('> Content gotten and written for');
@@ -1659,7 +1700,10 @@ function (_React$Component) {
 
 
 var divStyle = {
-  display: 'inline-flex'
+  width: '100%'
+};
+var crouselStyle = {
+  width: '100%'
 };
 
 /***/ }),
