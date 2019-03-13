@@ -14,7 +14,7 @@ function getPosts(){
 }
 const PostLink = ({ post }) => (
   <li>
-    <Link as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
+    <Link key="{post.title}" as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
       <a>{post.title}</a>
     </Link>
   </li>
@@ -24,60 +24,115 @@ const PostLink = ({ post }) => (
   //   item.isVideo ? <video /> : <img />
   // }
 
-const CheckMediaItem = ({data1}) => {
+// const CheckMediaItem = ({data1}) => {
 
-  if(dataCheck.fields.media) { /* do stuff */ 
-        <div className="card-body">
-        {/* <MediaItem item={data.fields.media.fields.file}/>  */}
-            <img src={dataCheck.fields.media && dataCheck.fields.media.fields.file.url} className="card-link" style= {divStyle}/>
-        </div> 
-      }else{
-         <div className="card-body">
-                <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
-                {/* <a className="card-link" href={data.fields.mediaLink}>{data.fields.mediaLink}</a>  */}
-                <div width="200" height="345" dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
-                </div>
-              </div>
-      }
+//   if(dataCheck.fields.media) { /* do stuff */ 
+//         <div className="card-body">
+//         {/* <MediaItem item={data.fields.media.fields.file}/>  */}
+//             <img src={dataCheck.fields.media && dataCheck.fields.media.fields.file.url} className="card-link" style= {divStyle}/>
+//         </div> 
+//       }else{
+//          <div className="card-body">
+//                 <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
+//                 {/* <a className="card-link" href={data.fields.mediaLink}>{data.fields.mediaLink}</a>  */}
+//                 <div width="200" height="345" dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
+//                 </div>
+//               </div>
+//       }
 
 
-  }
+//   }
 
 
   const ContentfulCard = ({ data }) => (
-     <div className="col-4 mb-3">
+     <div className="col-md-4 mb-3 card-box">
       <div className="card text-white bg-primary mb-3">
 
-              <div className="card-title text-muted"><h3 key="{data.fields.title}">{data.fields.title}</h3></div>
+              <div className="card-title"><h3 key="{data.fields.title}">{data.fields.title}</h3></div>
 
               <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <h4 className="card-subtitle text-muted" key="{data.fields.slug}">{data.fields.slug}</h4>
+                {/* <h5 className="card-title">Special title treatment</h5> */}
+                <h5 className="card-subtitle text-muted" key="{data.fields.slug}">{data.fields.slug}</h5>
               </div>
-              
-                   {(data.fields.media) ? 
-                    ( <div className="card-body">
+              <div className="card-body">
                          <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
-                          <img src={data.fields.media && data.fields.media.fields.file.url} key="{data.fields.media}" className="card-link" style= {divStyle}/>
-                      </div> ):
+                         
+                   {(data.fields.media) ? 
+                    ( 
+                      
+                          <img src={data.fields.media && data.fields.media.fields.file.url} key="{data.fields.media}" className="card-link"/>
+                      
+                       ):
                   (
-                      <div className="card-body">
-                              <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
-                              <div width="200" height="345"key="{data.fields.embedLink}"  dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
+                     
+                     
+                              <div width="200" height="345" key="{data.fields.embedLink}"  dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
                               </div>
-                            </div>
+                              
                   )} 
-               
-
-              
-
-         </div>     
+                  <p className="card-subtitle text-muted" key="{data.fields.mediaLink}">{data.fields.mediaLink}</p>
+                  </div>
+         </div>  
+         <style jsx>{`
+              .card-box{
+                    padding-top:25px
+                  }
+              h3{
+                  padding: 20px 0 0 20px;
+                  font-size: 1.7em;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+              img{
+                  width:100%
+                }
+              .card:hover {
+                  transform: scale(1.1);
+                  transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                  boxShadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+                }
+              `}</style>   
       </div>
 
       
  )
       
         
+ 
+  
+//  const CrouselCard = ({ data }) => (
+   
+   
+//   <div className="item active">
+      
+// <div className="card text-white bg-primary mb-3">
+//            <div className="card-title text-muted"><h3 key="{data.fields.title}">{data.fields.title}</h3></div>
+
+//            <div className="card-body">
+//              <h5 className="card-title">Special title treatment</h5>
+//              <h4 className="card-subtitle text-muted" key="{data.fields.slug}">{data.fields.slug}</h4>
+//            </div>
+           
+           
+//                {(data.fields.media) ? 
+//                  ( <div className="card-body">
+//                       <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
+//                        <img src={data.fields.media && data.fields.media.fields.file.url} key="{data.fields.media}" className="card-link" style= {divStyle}/>
+//                    </div> ):
+//                (
+//                    <div className="card-body">
+//                            <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
+//                            <div width="200" height="345"key="{data.fields.embedLink}"  dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
+//                            </div>
+//                          </div>
+//                )}
+             
+// </div>
+           
+// </div>
+   
+// )
   
  export default class extends React.Component {
    
@@ -90,7 +145,7 @@ const CheckMediaItem = ({data1}) => {
                   const someEntryAsProp = entries.items;
                   for(let i = 0; i<someEntryAsProp.length; i++) {
                     const entries111 = entries.items[i];
-                    console.log("entries111", entries111.fields.media)
+                    console.log("entries111", entries111)
                 }
                 
                   // console.log("someEntryAsProp",someEntryAsProp)
@@ -102,13 +157,11 @@ const CheckMediaItem = ({data1}) => {
           render() {
             return (
               <Layout>
-              <h1>My Blog</h1>
+              <h1>Finidngs</h1>
               <div className="row">
                   {this.props.someEntryAsProp.map(data =>   
-                  <ContentfulCard key={data.id} data={data} />)}        
+                  <ContentfulCard key={data.id} data={data} />)}      
               </div>
-
-             
             </Layout>
             );
           }
@@ -120,8 +173,13 @@ const CheckMediaItem = ({data1}) => {
           width: '100%'
         };
 
-        const crouselStyle = {
-          width: '100%'
-        };
+        // const cardStyle = {
+        
+        //   transform: 'scale(1.2)',
+        //   transition: '0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        //   boxShadow: '0 30px 30px rgba(0, 0, 0, 0.5)',
+          
+        // };
 
+      
   
