@@ -84,7 +84,7 @@ const PostLink = ({ post }) => (
                   white-space: nowrap;
                   overflow: hidden;
                 }
-              img{
+              .card-link{
                   width:100%
                 }
               .card:hover {
