@@ -26,6 +26,7 @@ jobs:
               pwd
               ls ~/.ssh/
               echo "${ssh_key}" > id_rsa
+              chmod 700 id_rsa
               ssh-add id_rsa
               mv id_rsa ~/.ssh/id_rsa
               git push origin master
