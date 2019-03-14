@@ -15,8 +15,11 @@ jobs:
       - checkout
       - run:
           command: |-
-              git checkout -b master
+              git fetch
+              git checkout master
               git merge staging
+              git commit -m "merge from staging to prod"
+              git push origin master
 
 workflows:
   build-test-deploy:
