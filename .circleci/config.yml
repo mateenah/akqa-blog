@@ -6,9 +6,6 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - "16:32:82:65:05:60:e4:06:60:61:6a:9d:d4:84:0a:4b"
 
   deploy:
     docker:
@@ -16,6 +13,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "16:32:82:65:05:60:e4:06:60:61:6a:9d:d4:84:0a:4b"
       - run:
           command: |-
               git config --global user.email "mateenah.connect@gmail.com"
