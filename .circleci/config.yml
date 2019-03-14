@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  test1:
     docker:
       - image: circleci/node:10.15.0
     working_directory: ~/repo
@@ -17,7 +17,7 @@ jobs:
 workflows:
   build-test-deploy:
     jobs:
-      - build
+      - test1
       - deploy:
           requires: 
-            - build
+            - test1
