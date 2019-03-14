@@ -22,13 +22,8 @@ jobs:
               git config --global user.name "Mateenah"
               git fetch
               git checkout master
-              echo "checked out master"
               git merge staging
               echo "merged master"
-              echo "committed"
-              pwd
-              ls ~/.ssh/
-              cat ~/.ssh/id_rsa
               git push origin master
               echo "pushed to master"
 
