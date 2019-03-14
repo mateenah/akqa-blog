@@ -15,6 +15,8 @@ jobs:
       - checkout
       - run:
           command: |-
+              git config --global user.email "mateenah.connect@gmail.com"
+              git config --global user.name "Mateenah"
               git fetch
               git checkout master
               git merge staging
