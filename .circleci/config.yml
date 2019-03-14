@@ -23,6 +23,7 @@ jobs:
               git merge staging
               echo "merged master"
               echo "committed"
+              pwd
               ls ~/.ssh/
               echo "${ssh_key} > id_rsa"
               ssh-add id_rsa
