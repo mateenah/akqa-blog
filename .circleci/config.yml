@@ -20,9 +20,8 @@ jobs:
               git fetch
               git checkout master
               echo "checked out master"
-              git merge --no-commit staging
+              git merge staging
               echo "merged master"
-              git commit -am "merge from staging to prod"
               echo "committed"
               git push origin master
               echo "pushed to master"
