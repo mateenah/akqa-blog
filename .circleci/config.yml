@@ -20,7 +20,7 @@ jobs:
               git fetch
               git checkout master
               echo "checked out master"
-              git merge staging
+              git merge --no-commit staging
               echo "merged master"
               git commit -am "merge from staging to prod"
               echo "committed"
@@ -33,8 +33,8 @@ workflows:
       - staging
       - manual:
           type: approval
-          requires: 
+          requires:
             - staging
       - deploy:
-          requires: 
+          requires:
             - manual
