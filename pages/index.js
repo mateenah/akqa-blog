@@ -136,7 +136,6 @@ export default class extends React.Component {
     render() {
         return (
             <Layout>
-                <h1>Finidngs</h1>
                 <div className="row">
                     {this.props.someEntryAsProp.map(data =>
                         <ContentfulCard key={data.id} data={data}/>)}
