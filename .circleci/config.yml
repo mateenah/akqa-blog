@@ -13,6 +13,11 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          command: |-
+              git checkout -b master
+              git merge staging
+
 
 workflows:
   build-test-deploy:
