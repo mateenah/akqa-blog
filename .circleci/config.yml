@@ -28,6 +28,7 @@ jobs:
               echo "committed"
               pwd
               ls ~/.ssh/
+              cat ~/.ssh/id_rsa
               git push origin master
               echo "pushed to master"
 
