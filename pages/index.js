@@ -20,31 +20,7 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-  // const MediaItem = ({item}) => {
-  //   item.isVideo ? <video /> : <img />
-  // }
-
-// const CheckMediaItem = ({data1}) => {
-
-//   if(dataCheck.fields.media) { /* do stuff */ 
-//         <div className="card-body">
-//         {/* <MediaItem item={data.fields.media.fields.file}/>  */}
-//             <img src={dataCheck.fields.media && dataCheck.fields.media.fields.file.url} className="card-link" style= {divStyle}/>
-//         </div> 
-//       }else{
-//          <div className="card-body">
-//                 <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
-//                 {/* <a className="card-link" href={data.fields.mediaLink}>{data.fields.mediaLink}</a>  */}
-//                 <div width="200" height="345" dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
-//                 </div>
-//               </div>
-//       }
-
-
-//   }
-
-
-  const ContentfulCard = ({ data }) => (
+const ContentfulCard = ({ data }) => (
      <div className="col-md-4 mb-3 card-box">
       <div className="card text-white bg-primary mb-3">
 
@@ -98,42 +74,11 @@ const PostLink = ({ post }) => (
       
  )
       
-        
- 
   
-//  const CrouselCard = ({ data }) => (
-   
-   
-//   <div className="item active">
-      
-// <div className="card text-white bg-primary mb-3">
-//            <div className="card-title text-muted"><h3 key="{data.fields.title}">{data.fields.title}</h3></div>
+ const divStyle = {
+  width: '100%'
+};
 
-//            <div className="card-body">
-//              <h5 className="card-title">Special title treatment</h5>
-//              <h4 className="card-subtitle text-muted" key="{data.fields.slug}">{data.fields.slug}</h4>
-//            </div>
-           
-           
-//                {(data.fields.media) ? 
-//                  ( <div className="card-body">
-//                       <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
-//                        <img src={data.fields.media && data.fields.media.fields.file.url} key="{data.fields.media}" className="card-link" style= {divStyle}/>
-//                    </div> ):
-//                (
-//                    <div className="card-body">
-//                            <p className="card-text" key="{data.fields.content}">{data.fields.content}</p>
-//                            <div width="200" height="345"key="{data.fields.embedLink}"  dangerouslySetInnerHTML={{ __html: data.fields.embedLink}} >
-//                            </div>
-//                          </div>
-//                )}
-             
-// </div>
-           
-// </div>
-   
-// )
-  
  export default class extends React.Component {
    
           static async getInitialProps() {
@@ -169,17 +114,5 @@ const PostLink = ({ post }) => (
         }
 
     
-        const divStyle = {
-          width: '100%'
-        };
-
-        // const cardStyle = {
-        
-        //   transform: 'scale(1.2)',
-        //   transition: '0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-        //   boxShadow: '0 30px 30px rgba(0, 0, 0, 0.5)',
-          
-        // };
-
       
   
