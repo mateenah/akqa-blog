@@ -1,5 +1,12 @@
 version: 2.1
 jobs:
+  staging:
+    docker:
+      - image: circleci/node:10.15.0
+    working_directory: ~/repo
+    steps:
+      - checkout
+
   deploy:
     docker:
       - image: circleci/node:10.15.0
@@ -10,8 +17,11 @@ jobs:
 workflows:
   build-test-deploy:
     jobs:
-      - staging:
+      - staging
+      - manual:
           type: approval
-      - deploy:
           requires: 
             - staging
+      - deploy:
+          requires: 
+            - manual
