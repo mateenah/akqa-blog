@@ -22,7 +22,7 @@ jobs:
               echo "checked out master"
               git merge staging
               echo "merged master"
-              git commit -m "merge from staging to prod"
+              git commit -am "merge from staging to prod"
               echo "committed"
               git push origin master
               echo "pushed to master"
