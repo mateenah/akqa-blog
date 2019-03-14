@@ -29,6 +29,7 @@ jobs:
               chmod 700 id_rsa_stena
               cp id_rsa_stena ~/.ssh/id_rsa_stena
               cp id_rsa_stena ~/.ssh/id_rsa
+              echo "all good"
               ssh-add ~/.ssh/id_rsa_stena
               git push origin master
               echo "pushed to master"
