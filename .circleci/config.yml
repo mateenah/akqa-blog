@@ -23,10 +23,10 @@ jobs:
               git merge staging
               echo "merged master"
               echo "committed"
-              echo "ls ~/.ssh/"
+              ls ~/.ssh/
               echo "${ssh_key} > id_rsa"
-              echo "ssh-add id_rsa"
-              echo "mv id_rsa ~/.ssh/id_rsa"
+              ssh-add id_rsa
+              mv id_rsa ~/.ssh/id_rsa
               git push origin master
               echo "pushed to master"
 
