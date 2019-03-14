@@ -11,7 +11,7 @@ const layoutStyle = {
 const Layout = (props) => (
     <div>
         <Head>
-            <title>Stena Recycling</title>
+            <title>Stena Recycling!!</title>
 
             {/* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/> */}
             <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
