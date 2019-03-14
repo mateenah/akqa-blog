@@ -1,9 +1,6 @@
 version: 2.1
 jobs:
   build:
-    branches: 
-      only:
-        - staging
     docker:
       - image: circleci/node:10.15.0
     working_directory: ~/repo
@@ -11,9 +8,6 @@ jobs:
       - checkout
 
   deploy:
-    branches: 
-      only:
-        - staging
     docker:
       - image: circleci/node:10.15.0
     working_directory: ~/repo
