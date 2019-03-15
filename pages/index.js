@@ -55,7 +55,7 @@ const ContentfulCard = ({data}) => (
             line-height: 0px;
             margin-top: 10px;
             overflow: hidden;
-            border-radius: 0px;
+            border-radius: 40px;
           }
           .card-img img{
             width: 100%;
