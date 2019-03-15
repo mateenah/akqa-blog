@@ -52,14 +52,15 @@ const ContentfulCard = ({data}) => (
               transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
           }
           .card-img{
-            height: 150px;
+            line-height: 0px;
             margin-top: 10px;
             overflow: hidden;
-            border-radius:0px;
+            border-radius: 0px;
           }
           .card-img img{
             width: 100%;
             height: 100%;
+            
             object-fit: cover;
           }
           .card-box{
