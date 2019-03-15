@@ -60,7 +60,6 @@ const ContentfulCard = ({data}) => (
           .card-img img{
             width: 100%;
             height: 100%;
-            
             object-fit: cover;
           }
           .card-box{
@@ -87,7 +86,7 @@ const ContentfulCard = ({data}) => (
             padding-bottom:0px;
           }
           .text-muted{
-              color: #ffffff52 !important;
+              color: #00000052 !important;
           }
           .card-text{
             max-height:200px;
